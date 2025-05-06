@@ -10,16 +10,18 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar bg-light shadow-lg d-flex p-3 justify-content-between">
-        <div>
-            <a class="navbar-brand font-weight-bold justify-content-between fs-2" href="#">News<span class="text-purple">Geek</span>!</a>
-        </div>
-        <div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+        <div class="container-fluid">
+            <div>
+                <a class="navbar-brand font-weight-bold justify-content-between fs-2" href="#">News<span class="text-purple">Geek</span>!</a>
+            </div>
+            <!-- Botão de alternância para o menu hambúrguer -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <!-- Menu de navegação que será escondido em telas pequenas -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item active mx-2">
+                    <li class="nav-item mx-2">
                         <a class="nav-link font-weight-bold btn btn-purple" href="#">Home</a>
                     </li>
                     <li class="nav-item mx-2">
@@ -36,8 +38,7 @@
         </div>
     </nav>
 
-    <!-- Bootstrap JS and dependencies (required for the toggle effect) -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybP5D8Ckq4po+Vy0HfU0vjm/S5Mm5Ff5z0g5lrwe2kz25b43" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js" integrity="sha384-GLhlTQ8iXb1+4Od5v7CXwJj5j1zBHGvR5g92vv2gG66j9cVfakfpU5g6qzqf2P5G" crossorigin="anonymous"></script>
+    <!-- Script do Bootstrap para funcionalidade do menu hambúrguer -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
