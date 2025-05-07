@@ -87,3 +87,8 @@
   position: relative;
   z-index: 10; /* Maior que o z-index do carrossel */
 }
+
+/* Limita a altura máxima da imagem do carrosel */
+.carousel-item img {
+  max-height: 400px;
+}
