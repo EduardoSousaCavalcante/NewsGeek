@@ -81,3 +81,9 @@
   .shadow-purple {
     box-shadow: 0 0 10px rgba(111, 66, 193, 0.5) !important; /* Sombra roxa suave */
   }
+
+/* Adiciona uma sombrinha da navbar no carrosel*/
+.navbar {
+  position: relative;
+  z-index: 10; /* Maior que o z-index do carrossel */
+}
