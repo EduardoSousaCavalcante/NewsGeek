@@ -1,0 +1,11 @@
+@media (max-width: 991px) {
+
+    .navbar-nav .nav-item {
+        margin: 10px 0; /* Espaçamento entre os itens no menu hambúrguer */
+        text-align: center; /* Alinhar os itens ao centro */
+    }
+
+    .nav-link{
+      width: 100%;
+    }
+}
