@@ -44,6 +44,14 @@ return new class extends Migration
             'created_at' => now(),
             'updated_at' => now(),
         ]);
+
+        DB::table('users')->insert([
+            'name' => 'Eduardo',
+            'email' => 'eduardo@teste.com',
+            'password' => bcrypt('123456'),
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
     }
 
     /**
