@@ -30,6 +30,8 @@ class CardController extends Controller
             'link' => 'nullable|max:255',
         ]);
 
+        $imageName = null;
+
         // Salvar a imagem na pasta public/images
         if ($request->hasFile('img')) {
             $image = $request->file('img');
@@ -40,7 +42,7 @@ class CardController extends Controller
         Card::create([
             'titulo' => $request->titulo,
             'descricao' => $request->descricao,
-            'img' => $imageName ?? null,
+            'img' => $imageName,
             'link' => $request->link ?? '#',
             'curtidas' => 0,
             'views' => 0,
@@ -48,8 +50,6 @@ class CardController extends Controller
 
         return redirect()->route('cards.index')->with('success', 'Card criado com sucesso!');
     }
-
-
 
     // Mostrar formulário para editar
     public function edit(Card $card)
@@ -63,20 +63,31 @@ class CardController extends Controller
         $request->validate([
             'titulo' => 'required|max:50',
             'descricao' => 'required|max:150',
-            'img' => 'required|max:50',
-            'curtidas' => 'required|integer',
-            'views' => 'required|integer',
-            'link' => 'required|max:255',
+            'img' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
+            'link' => 'nullable|max:255',
         ]);
 
-        $card->update($request->all());
-        return redirect()->route('cards.index');
+        $card->titulo = $request->titulo;
+        $card->descricao = $request->descricao;
+        $card->link = $request->link ?? '#';
+
+        // Se veio uma nova imagem, salva
+        if ($request->hasFile('img')) {
+            $image = $request->file('img');
+            $imageName = time().'_'.$image->getClientOriginalName();
+            $image->move(public_path('images'), $imageName);
+            $card->img = $imageName;
+        }
+
+        $card->save();
+
+        return redirect()->route('cards.index')->with('success', 'Card atualizado com sucesso!');
     }
 
     // Deletar card
     public function destroy(Card $card)
     {
         $card->delete();
-        return redirect()->route('cards.index');
+        return redirect()->route('cards.index')->with('success', 'Card deletado com sucesso!');
     }
 }
