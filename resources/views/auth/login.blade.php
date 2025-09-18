@@ -34,7 +34,7 @@
             <button type="submit" class="btn btn-purple w-100">Logar</button>
 
             <div class="text-center mt-3">
-                <a href="#" class="text-decoration-none">Criar conta</a>
+                <a href="/" class="text-decoration-none">Voltar</a>
             </div>
         </form>
     </div>
