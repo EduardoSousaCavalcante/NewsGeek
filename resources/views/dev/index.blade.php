@@ -18,6 +18,8 @@
             <button type="submit" class="btn btn-danger">Sair</button>
         </form> 
         <a href="{{ route('cards.index') }}" class="btn btn-purple btn-lg">Manter Cards</a>
+        <a href="{{ route('carousels.index') }}" class="btn btn-purple btn-lg">Manter Carrossel</a>
+
     </div>
 </body>
 </html>

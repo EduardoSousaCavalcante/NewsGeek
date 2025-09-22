@@ -46,29 +46,17 @@
     </nav>
 
     <!-- Carousel -->
-    <div id="carouselExampleCaptions" class="carousel slide mb-5" data-bs-ride="carousel">
+    <div id="carouselExampleCaptions" class="carousel slide mb-5" data-bs-ride="carousel" style="max-width: 1340px; margin: 0 auto;">
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="{{ asset('sakura.jpg') }}" class="d-block w-100" alt="Imagem 1">
+            @foreach($carousels as $key => $carousel)
+            <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                <img src="{{ asset('images/' . $carousel->imagem) }}" class="d-block w-100" alt="{{ $carousel->titulo }}">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Título da Imagem 1</h5>
-                    <p>Descrição da imagem 1.</p>
+                    <h5>{{ $carousel->titulo }}</h5>
+                    <p>{{ $carousel->descricao }}</p>
                 </div>
             </div>
-            <div class="carousel-item">
-                <img src="{{ asset('madoka.jpg') }}" class="d-block w-100" alt="Imagem 2">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Título da Imagem 2</h5>
-                    <p>Descrição da imagem 2.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="{{ asset('moon.webp') }}" class="d-block w-100" alt="Imagem 3">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Título da Imagem 3</h5>
-                    <p>Descrição da imagem 3.</p>
-                </div>
-            </div>
+            @endforeach
         </div>
 
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
@@ -80,6 +68,8 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
+
+
     <!-- Cards em destaque -->
     <section class="m-4">
         <p>Destaques</p>

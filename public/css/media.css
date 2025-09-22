@@ -8,4 +8,8 @@
     .nav-link{
       width: 100%;
     }
+
+    #carouselExampleCaptions {
+        display: none; /* Oculta o carrossel em telas menores */
+    }
 }

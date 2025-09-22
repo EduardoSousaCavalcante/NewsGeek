@@ -4,11 +4,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Models\Card;
 use App\Http\Controllers\CardController;
+use App\Http\Controllers\CarouselController;
 
 // Página pública (inicio)
 Route::get('/', function () {
     $cards = Card::all(); // Pega todos os cards do banco
-    return view('inicio', compact('cards'));
+    $carousels = \App\Models\Carousel::all(); // Pega todos os carousels do banco
+    return view('inicio', compact('cards', 'carousels'));
 })->name('inicio');
 
 // Autenticação
@@ -30,4 +32,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/dev/cards/{card}/edit', [CardController::class, 'edit'])->name('cards.edit');
     Route::put('/dev/cards/{card}', [CardController::class, 'update'])->name('cards.update');
     Route::delete('/dev/cards/{card}', [CardController::class, 'destroy'])->name('cards.destroy');
+
+    // CRUD dos carrosséis
+    Route::get('/dev/carousels', [CarouselController::class, 'index'])->name('carousels.index');
+    Route::get('/dev/carousels/create', [CarouselController::class, 'create'])->name('carousels.create');
+    Route::post('/dev/carousels', [CarouselController::class, 'store'])->name('carousels.store');
+    Route::get('/dev/carousels/{carousel}/edit', [CarouselController::class, 'edit'])->name('carousels.edit');
+    Route::put('/dev/carousels/{carousel}', [CarouselController::class, 'update'])->name('carousels.update');
+    Route::delete('/dev/carousels/{carousel}', [CarouselController::class, 'destroy'])->name('carousels.destroy');
 });
