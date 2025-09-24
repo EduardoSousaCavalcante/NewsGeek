@@ -25,21 +25,21 @@ return new class extends Migration
         DB::table('carousels')->insert([
             [
                 'titulo' => 'Laranja e roxo',
-                'descricao' => 'gosto',
+                'descricao' => 'Gosto',
                 'imagem' => 'laranja_roxo.png',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'titulo' => 'Vermelho e Marrom',
-                'descricao' => 'Descrição do carrossel 2',
+                'descricao' => 'Gosto Bastante',
                 'imagem' => 'vermelho_marrom.png',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'titulo' => 'Azul e Rosa',
-                'descricao' => 'Descrição do carrossel 3',
+                'descricao' => 'Gosto Também',
                 'imagem' => 'azul_rosa.png',
                 'created_at' => now(),
                 'updated_at' => now(),
