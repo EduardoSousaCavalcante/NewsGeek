@@ -8,7 +8,7 @@ use App\Http\Controllers\CarouselController;
 
 // Página pública (inicio)
 Route::get('/', function () {
-    $cards = Card::all(); // Pega todos os cards do banco
+    $cards = \App\Models\Card::orderBy('created_at', 'desc')->get();
     $carousels = \App\Models\Carousel::all(); // Pega todos os carousels do banco
     return view('inicio', compact('cards', 'carousels'));
 })->name('inicio');

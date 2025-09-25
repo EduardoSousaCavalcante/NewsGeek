@@ -70,7 +70,7 @@
     </div>
 
 
-    <!-- Cards em destaque -->
+    <!-- Cards cronológicos -->
     <section class="m-4">
         <p>Destaques</p>
         <div class="container">

@@ -65,6 +65,46 @@ return new class extends Migration
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
+            [
+                'img' => 'roxo.png',
+                'titulo' => 'Roxo',
+                'descricao' => 'Uma cor misteriosa e real. Gosto de como combina a calma do azul com a energia do vermelho.',
+                'curtidas' => 410,
+                'views' => 2000,
+                'link' => '#',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'img' => 'rosa.png',
+                'titulo' => 'Rosa',
+                'descricao' => 'Uma cor suave e delicada que evoca sentimentos de amor e carinho.',
+                'curtidas' => 350,
+                'views' => 1900,
+                'link' => '#',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'img' => 'laranja.png',
+                'titulo' => 'Laranja',
+                'descricao' => 'Uma cor vibrante e energética que combina a paixão do vermelho com a alegria do amarelo. Gosto de como traz uma sensação de entusiasmo e criatividade.',
+                'curtidas' => 380,
+                'views' => 1700,
+                'link' => '#',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'img' => 'marrom.png',
+                'titulo' => 'Marrom',
+                'descricao' => 'Uma cor terrosa e acolhedora que evoca sentimentos de estabilidade e conforto. Gosto de como traz uma sensação de segurança e conexão com a natureza.',
+                'curtidas' => 270,
+                'views' => 1500,
+                'link' => '#',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]
         ]);
     }
 

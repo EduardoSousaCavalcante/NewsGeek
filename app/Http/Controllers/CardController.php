@@ -10,9 +10,10 @@ class CardController extends Controller
     // Mostrar todos os cards
     public function index()
     {
-        $cards = Card::all();
+        $cards = Card::orderBy('created_at', 'desc')->get(); // Agora do mais novo para o mais antigo
         return view('dev.cards.index', compact('cards'));
     }
+
 
     // Mostrar formulário para criar
     public function create()
