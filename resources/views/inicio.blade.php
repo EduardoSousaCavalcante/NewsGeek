@@ -68,11 +68,38 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
+    <!-- Cards mais visualizados -->
+    <section class="m-4">
+        <p>Mais Populares</p>
+        <div class="container">
+            <div class="row">
+                @foreach($mostViewedCards as $card)
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100 d-flex flex-column">
+                        <img src="{{ asset('images/' . $card->img) }}" class="card-img-top" alt="{{ $card->titulo }}">
+                        
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">{{ $card->titulo }}</h5>
+                            <p class="card-text">{{ $card->descricao }}</p>
 
+                            <div class="d-flex justify-content-between align-items-center mt-auto mb-1">
+                                <a class="btn btn-purple" target="_blank">Ver mais</a>
+                                <div>
+                                    <i class="bi bi-heart-fill text-danger me-2"></i>{{ $card->curtidas }}
+                                    <i class="bi bi-eye ms-3"></i> {{ $card->views }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
 
     <!-- Cards cronológicos -->
     <section class="m-4">
-        <p>Destaques</p>
+        <p>Ultimos Adicionados</p>
         <div class="container">
             <div class="row">
                 @foreach($cards as $card)
