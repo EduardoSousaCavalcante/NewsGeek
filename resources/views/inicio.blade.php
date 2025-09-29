@@ -14,8 +14,9 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar bg-light shadow-lg d-flex p-3 justify-content-between">
         <div class="container-fluid">
-            <div>
+            <div class="d-flex align-items-center">
                 <a class="navbar-brand font-weight-bold justify-content-between fs-2" href="#">News<span class="text-purple">Geek</span>!</a>
+                <button id="temaBotao" class="btn btn-outline-secondary justify-content-between">🌙</button>
             </div>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -39,8 +40,6 @@
                     <li class="nav-item mx-2">
                         <a class="nav-link font-weight-bold btn btn-purple" href="{{ route('dev.index') }}">Área Dev</a>
                     </li>
-                    <button id="temaBotao" class="btn btn-outline-secondary ms-3">🌙 Tema Escuro</button>
-
                 </ul>
             </div>
         </div>
@@ -131,24 +130,27 @@
     <script>
         const botaoTema = document.getElementById('temaBotao');
         const body = document.body;
+        const navbar = document.querySelector('.navbar'); // CORREÇÃO: seleciona a navbar
 
         // Aplica o tema salvo no localStorage
         if(localStorage.getItem('tema') === 'escuro'){
             body.classList.add('dark-mode');
+            navbar.classList.add('dark-mode');
+            botaoTema.textContent = "☀️";
         }
 
         botaoTema.addEventListener('click', () => {
             body.classList.toggle('dark-mode');
+            navbar.classList.toggle('dark-mode');
 
             if(body.classList.contains('dark-mode')){
                 localStorage.setItem('tema', 'escuro');
-                botaoTema.textContent = "☀️ Tema Claro";
+                botaoTema.textContent = "☀️";
             } else {
                 localStorage.setItem('tema', 'claro');
-                botaoTema.textContent = "🌙 Tema Escuro";
+                botaoTema.textContent = "🌙";
             }
         });
     </script>
-
 </body>
 </html>

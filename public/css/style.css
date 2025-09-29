@@ -123,6 +123,27 @@ body.dark-mode .btn-outline-purple {
 }
 
 body.dark-mode .carousel-caption h5,
-body.dark-mode .carousel-caption p {
+body.dark-mode .carousel-caption p,
+body.dark-mode .navbar-brand{
     color: #ffffff;
+}
+
+body.dark-mode .navbar,
+.navbar.dark-mode {
+    background-color: #1f1f1f !important;
+    color: #ffffff;
+}
+
+body.dark-mode .navbar .nav-link {
+    color: #ffffff !important;
+}
+
+body.dark-mode .navbar .btn-outline-purple {
+    border-color: #7c4dff;
+    color: #7c4dff;
+}
+
+body.dark-mode .navbar .btn-purple {
+    background-color: #7c4dff;
+    color: #fff;
 }
