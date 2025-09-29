@@ -70,8 +70,8 @@
     </div>
     <!-- Cards mais visualizados -->
     <section class="m-4">
-        <p>Mais Populares</p>
         <div class="container">
+            <p class="fs-4">Mais Populares</p>
             <div class="row">
                 @foreach($mostViewedCards as $card)
                 <div class="col-12 col-md-6 col-lg-3 mb-4">
@@ -99,8 +99,8 @@
 
     <!-- Cards cronológicos -->
     <section class="m-4">
-        <p>Ultimos Adicionados</p>
         <div class="container">
+            <p class="fs-4">Ultimos Adicionados</p>
             <div class="row">
                 @foreach($cards as $card)
                 <div class="col-12 col-md-6 col-lg-3 mb-4">
