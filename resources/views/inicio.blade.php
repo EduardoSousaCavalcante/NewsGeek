@@ -39,6 +39,7 @@
                     <li class="nav-item mx-2">
                         <a class="nav-link font-weight-bold btn btn-purple" href="{{ route('dev.index') }}">Área Dev</a>
                     </li>
+                    <button id="temaBotao" class="btn btn-outline-secondary ms-3">🌙 Tema Escuro</button>
 
                 </ul>
             </div>
@@ -127,5 +128,27 @@
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const botaoTema = document.getElementById('temaBotao');
+        const body = document.body;
+
+        // Aplica o tema salvo no localStorage
+        if(localStorage.getItem('tema') === 'escuro'){
+            body.classList.add('dark-mode');
+        }
+
+        botaoTema.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+
+            if(body.classList.contains('dark-mode')){
+                localStorage.setItem('tema', 'escuro');
+                botaoTema.textContent = "☀️ Tema Claro";
+            } else {
+                localStorage.setItem('tema', 'claro');
+                botaoTema.textContent = "🌙 Tema Escuro";
+            }
+        });
+    </script>
+
 </body>
 </html>

@@ -96,3 +96,33 @@
 .card {
     min-height: 355px;
 }
+
+/* Tema escuro */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode .navbar {
+    background-color: #1f1f1f;
+}
+
+body.dark-mode .card {
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
+
+body.dark-mode .btn-purple {
+    background-color: #7c4dff;
+    color: #fff;
+}
+
+body.dark-mode .btn-outline-purple {
+    border-color: #7c4dff;
+    color: #7c4dff;
+}
+
+body.dark-mode .carousel-caption h5,
+body.dark-mode .carousel-caption p {
+    color: #ffffff;
+}
