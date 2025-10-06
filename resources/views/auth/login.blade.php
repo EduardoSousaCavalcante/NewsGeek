@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light d-flex justify-content-center align-items-center vh-100">
-    <div class="card p-4 shadow-sm" style="width: 100%; max-width: 400px;">
+    <div class="card p-4 shadow-sm mx-4" style="width: 100%; max-width: 400px;">
         <form method="POST" action="{{ route('login.post') }}">
             @csrf
 
